@@ -1,0 +1,29 @@
+{
+  "name": "vue3-chartjs",
+  "version": "1.0.0",
+  "license": "MIT",
+  "files": ["dist"],
+  "main":"./dist/vchart.umd.js",
+  "module": "./dist/vchart.es.js",
+  "peerDependencies": {
+    "chart.js": "^3.7.0",
+    "vue": "^3.2.26"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.0.1",
+    "autoprefixer": "^10.4.1",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.10",
+    "vite": "^2.7.10"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "exports":{
+    ".":{
+      "import":"./dist/vchart.es.js",
+      "require":"./dist/vchart.umd.js"
+    }
+  }
+}
