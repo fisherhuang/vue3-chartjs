@@ -63,6 +63,10 @@ export default (chartId:string,chartType)=>defineComponent({
 			default:chartId,
 			type:String
 		},
+		type:{
+			default:null,
+			type:String
+		},
 		options:{
 			default:{},
 			type:Object
@@ -109,6 +113,11 @@ export default (chartId:string,chartType)=>defineComponent({
 			if(chartType==="mixed")
 			{
 				_chartType= _data?.datasets[0]?.type;
+			}
+			else if(chartType==="dynamic"){
+				_chartType=props.type;
+				if(!props.type)
+					console.warn("chart type is empty");
 			}
 
 			(_data.datasets||[]).map(element => {

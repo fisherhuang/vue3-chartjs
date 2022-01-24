@@ -9,6 +9,7 @@ const RadarChart = createChart('radar-chart', 'radar');
 const BubbleChart = createChart('bubble-chart', 'bubble');
 const ScatterChart = createChart('scatter-chart', 'scatter');
 const MixedChart=createChart("mixed-chart","mixed");
+const DynamicTypeChart=createChart("dynamic-type","dynamic");
 
 export {	
 	LineChart,
@@ -19,7 +20,8 @@ export {
 	BubbleChart,
 	ScatterChart,
 	MixedChart,
-	BarChart
+	BarChart,
+	DynamicTypeChart
 }
 
 export default {
@@ -31,5 +33,6 @@ export default {
 	BubbleChart,
 	ScatterChart,
 	MixedChart,
-	BarChart
+	BarChart,
+	DynamicTypeChart
 };

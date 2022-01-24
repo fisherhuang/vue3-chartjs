@@ -14,14 +14,46 @@ var __spreadValues = (a, b) => {
     }
   return a;
 };
-import ChartJS from "chart.js/auto";
+import * as ChartJS from "chart.js";
 import { defineComponent, h, reactive, ref, onMounted, toRaw, onBeforeUnmount } from "vue";
+const {
+  Chart,
+  ArcElement,
+  LineElement,
+  BarElement,
+  PointElement,
+  BarController,
+  BubbleController,
+  DoughnutController,
+  LineController,
+  PieController,
+  PolarAreaController,
+  RadarController,
+  ScatterController,
+  CategoryScale,
+  LinearScale,
+  LogarithmicScale,
+  RadialLinearScale,
+  TimeScale,
+  TimeSeriesScale,
+  Decimation,
+  Filler,
+  Legend,
+  Title,
+  Tooltip,
+  SubTitle
+} = ChartJS;
+Chart.register(ArcElement, LineElement, BarElement, PointElement, BarController, BubbleController, DoughnutController, LineController, PieController, PolarAreaController, RadarController, ScatterController, CategoryScale, LinearScale, LogarithmicScale, RadialLinearScale, TimeScale, TimeSeriesScale, Decimation, Filler, Legend, Title, Tooltip, SubTitle);
 var createChart = (chartId, chartType) => defineComponent({
   name: chartId,
   inheritAttrs: false,
   props: {
     chartId: {
       default: chartId,
+      type: String
+    },
+    type: {
+      default: null,
       type: String
     },
     options: {
@@ -50,7 +82,7 @@ var createChart = (chartId, chartType) => defineComponent({
   setup(props, { expose }) {
     let _chartInstance = reactive({});
     const _options = props.options;
-    const _ref = ref(props.chartId || "line-chart");
+    const _ref = ref({});
     const _data = props.data;
     onMounted(function() {
       var _a;
@@ -62,13 +94,17 @@ var createChart = (chartId, chartType) => defineComponent({
       let _chartType = chartType || "line";
       if (chartType === "mixed") {
         _chartType = (_a = _data == null ? void 0 : _data.datasets[0]) == null ? void 0 : _a.type;
+      } else if (chartType === "dynamic") {
+        _chartType = props.type;
+        if (!props.type)
+          console.warn("chart type is empty");
       }
       (_data.datasets || []).map((element) => {
         element.data = Array.from(element.data);
         return element;
       });
       const _d = __spreadValues({}, toRaw(_data));
-      _chartInstance = new ChartJS(context, {
+      _chartInstance = new Chart(context, {
         type: _chartType,
         options: _options,
         data: _d
@@ -106,6 +142,7 @@ const RadarChart = createChart("radar-chart", "radar");
 const BubbleChart = createChart("bubble-chart", "bubble");
 const ScatterChart = createChart("scatter-chart", "scatter");
 const MixedChart = createChart("mixed-chart", "mixed");
+const DynamicTypeChart = createChart("dynamic-type", "dynamic");
 var index = {
   LineChart,
   PieChart,
@@ -115,6 +152,7 @@ var index = {
   BubbleChart,
   ScatterChart,
   MixedChart,
-  BarChart
+  BarChart,
+  DynamicTypeChart
 };
-export { BarChart, BubbleChart, DoughnutChart, LineChart, MixedChart, PieChart, PolarAreaChart, RadarChart, ScatterChart, index as default };
+export { BarChart, BubbleChart, DoughnutChart, DynamicTypeChart, LineChart, MixedChart, PieChart, PolarAreaChart, RadarChart, ScatterChart, index as default };

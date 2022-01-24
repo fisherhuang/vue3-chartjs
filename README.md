@@ -11,6 +11,7 @@
 - ScatterChart
 - MixedChart
 - BarChart
+- DynamicTypeChart
 
 ## 属性（props）
 - options
@@ -18,8 +19,9 @@
 - data
 
 `<LineChart options="*" chartId="chartRef" data="*"/>`
-`
-const addData=()=>{
+
+
+`const addData=()=>{
 	const _el=lineChartRef.value;
 	
 	_el.update((instance)=>{

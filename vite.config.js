@@ -25,7 +25,8 @@ export default defineConfig({
 			globals:{
 				vue:'Vue',
 				chart:"ChartJs"
-			}
+			},
+			entry:"./index.html"
 		}
 	}
 })

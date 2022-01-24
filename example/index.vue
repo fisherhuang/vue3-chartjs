@@ -23,7 +23,7 @@
 				</v-panel>
 			</div>
 			<div>
-				<v-panel title="甜甜圈图(doughnut chart)">
+				<v-panel title="环状图(doughnut chart)">
 					<DoughnutChart/>
 				</v-panel>
 			</div>
@@ -47,6 +47,9 @@
 					<MixedChart/>
 				</v-panel>
 			</div>
+			<div>
+				<dynamic-type-chart/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -62,6 +65,7 @@
 	import PieChart from "./pie.vue";
 	import PolarAreaChart from "./polararea.vue";
 	import MixedChart from "./mixed.vue";
+	import DynamicTypeChart from "./dynamicType.vue";
 
 	export default {
 			components:{
@@ -74,7 +78,8 @@
 			BubbleChart,
 			ScatterChart,
 			MixedChart,
-			'v-panel':panel
+			'v-panel':panel,
+			DynamicTypeChart
 		},
 		setup(){
 			const chartRefs=reactive({
