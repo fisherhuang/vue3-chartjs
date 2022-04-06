@@ -35,3 +35,5 @@
 - getInstance
 - update
 - destroy
+
+## [awesome chartjs](https://github.com/chartjs/awesome#charts) 

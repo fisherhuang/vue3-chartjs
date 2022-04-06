@@ -15,18 +15,8 @@ export default defineConfig({
 		port:9900
 	},
 	build:{
-		lib:{
-			entry:"./src/index.ts",
-			name:"vchart",
-			fileName:(format)=>`vchart.${format}.js`,
-			formats:["es","umd","esm"]
-		},
+		outDir:"samples",
 		rollupOptions:{
-			external: ['vue','chart.js'],
-			globals:{
-				vue:'Vue',
-				chart:"ChartJs"
-			},
 			entry:"./index.html"
 		}
 	}

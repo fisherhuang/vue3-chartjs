@@ -19,12 +19,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build"
-  },
-  "exports":{
-    ".":{
-      "import":"./dist/vchart.es.js",
-      "require":"./dist/vchart.umd.js"
-    }
+    "build": "vite build",
+    "build:sample":"vite build --config vite.example.config.js"
   }
 }
