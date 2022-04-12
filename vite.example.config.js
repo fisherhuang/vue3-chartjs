@@ -15,7 +15,7 @@ export default defineConfig({
 		port:9900
 	},
 	build:{
-		outDir:"samples",
+		outDir:"docs",
 		rollupOptions:{
 			entry:"./index.html"
 		}
