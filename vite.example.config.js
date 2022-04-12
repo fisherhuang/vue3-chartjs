@@ -16,10 +16,8 @@ export default defineConfig({
     outDir: "docs",
 
     rollupOptions: {
-      entry: "./index.html",
-      output: {
-        assetFileNames: "./docs/assets/[name].[hashcontent:8][ext]",
-      },
+      entry: "./example/index.html",
+      output: {},
     },
   },
 });
