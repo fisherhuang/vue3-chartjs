@@ -1,6 +1,6 @@
 {
   "name": "v3-chartjs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "files": ["dist"],
   "repository": "https://github.com/fisherhuang/vue3-chartjs.git",

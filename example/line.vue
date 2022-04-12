@@ -2,8 +2,8 @@
 	<Panel title="折线图（Line Chart）">
 		<template #actionbar>
 			<button @click="addData()" class="mr-1 border-gray-50  text-cool-gray-50 border-separate">add data</button>
-			<!-- <button @click="random()" class="mr-1 border-gray-50 border-separate">随机</button>
-			<button @click="showSourceCode" class="mr-1 border-gray-50 border-separate">显示源码</button> -->
+			<!-- <button @click="random()" class="mr-1 border-gray-50 border-separate">随机</button> -->
+			<button @click="showSourceCode" class="mr-1 border-gray-50 border-separate btn-primary">源码（source）</button>
 		</template>
 		<LineChart chartId="chart1" ref="lineChartRef" :data="chartData"/>
 	</Panel>
