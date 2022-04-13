@@ -38,3 +38,4 @@
 `()=>{ const _el=lineChartRef.value; const instance=_el.getInstance(); instance... }; `
 
 ## [awesome chartjs](https://github.com/chartjs/awesome#charts)
+## [demo](https://fisherhuang.github.io/vue3-chartjs)
