@@ -2,6 +2,8 @@
 
 ## 基于[Chartjs](https://www.chartjs.org/)
 
+#### [demo](https://fisherhuang.github.io/vue3-chartjs)
+
 - LineChart
 - PieChart
 - DoughnutChart
@@ -19,9 +21,19 @@
 - chartId
 - data
 
-`<LineChart options="*" chartId="chartRef" data="*"/>`
+```js 
+	<LineChart options="*" chartId="chartRef" data="*"/>
+```
 
-`const addData=()=>{ const _el=lineChartRef.value; _el.update((instance)=>{ instance.data.datasets[0].data.push(15) instance.data.labels.push("autumn") }) }; `
+```js 
+	const addData = () => { 
+		const _el=lineChartRef.value; 
+		_el.update((instance)=>{ 
+			instance.data.datasets[0].data.push(15);
+			instance.data.labels.push("autumn") 
+		}) 
+	}; 
+```
 
 ## 暴露的实例方法（expose instance methods）
 
@@ -31,11 +43,20 @@
 
 ### 销毁 chart(Destroy the chart instance)
 
-`const destroyChart=()=>{ const _el=lineChartRef.value; _el.destroy(); }; `
+```js
+const destroyChart = () => {
+  const _el = lineChartRef.value;
+  _el.destroy();
+};
+```
 
-### 获取图表实例(get chart instance)
+### 获取图表实例(get chart's instance)
 
-`()=>{ const _el=lineChartRef.value; const instance=_el.getInstance(); instance... }; `
-
+```
+() => {
+	const _el=lineChartRef.value;
+	const instance=_el.getInstance();
+	///instance...
+};
+```
 ## [awesome chartjs](https://github.com/chartjs/awesome#charts)
-## [demo](https://fisherhuang.github.io/vue3-chartjs)
