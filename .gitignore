@@ -1,4 +1,6 @@
 /node_modules/
 /example/
 /dist/
+pnpm-lock.json
+yarn-lock.json
 deploy.sh
