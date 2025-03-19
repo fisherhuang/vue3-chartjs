@@ -9,8 +9,8 @@
   "main": "./dist/vchart.umd.js",
   "module": "./dist/vchart.es.js",
   "peerDependencies": {
-    "chart.js": "^3.7.0",
-    "vue": "^3.2.26"
+    "chart.js": "^3.9.1",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.1",
