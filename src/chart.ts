@@ -150,6 +150,7 @@ export default (chartId: string, chartType) => defineComponent({
 		});
 
 		watch([() => props.data, () => props.options], () => {
+			console.log('watch')
 			_chartInstance?.update?.()
 		})
 
